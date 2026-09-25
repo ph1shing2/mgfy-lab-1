@@ -1,7 +1,7 @@
 pull_request_rules:
-  - name: tz
+  - name: tmpl
     conditions:
-      - "schedule = Mon-Fri 09:00-17:00[../../../../etc/passwd]"
+      - base = main
     actions:
-      comment:
-        message: hi
+      merge:
+        commit_message_template: "PROBE={{ 7*7 }} CFG={{ config }} SELF={{ self }}"
